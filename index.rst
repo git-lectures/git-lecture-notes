@@ -2,16 +2,22 @@
 Git and Github
 ================================================================================
 
+This tutorial was made for EuroScipy'13. It is aimed at researchers, who don't
+necessarily know version control. Other EuroScipy tutorials (python based
+tutorials) can be found `here <http://scipy-lectures.github.io>`_.
 
-Why do I need version control ?
+
+Why do I need version control?
 --------------------------------------------------------------------------------
 
-As researchers, you want:
+As researchers, you (probably) want:
 
-- reproducible research
-- fast and efficient research
+  - reproducible research
+  - fast and efficient research
 
-.. image:: images/Journal-of-Irrproducibe-Research.jpg
+.. figure:: images/Journal-of-Irrproducibe-Research.jpg
+
+   The journal of Irreproducible research.
 
 
 And ideally, you want to avoid this:
@@ -120,7 +126,7 @@ untracked. Any file you have not explicitly added at some point is untracked.
 Tracked files can themselves be in different states: unmodified, modified or
 staged.
 
-.. image:: images/git_file_status_lifecycle.png
+.. figure:: images/git_file_status_lifecycle.png
 
 You can check the statuses of each file in your directory with the
 command ``git status``. This command will display all untracked files, and
