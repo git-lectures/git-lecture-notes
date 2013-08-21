@@ -5,7 +5,7 @@
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
-BUILDDIR      = _build
+BUILDDIR      = build
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -37,6 +37,7 @@ help:
 	@echo "  epub       to make an epub"
 	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
 	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
+	@echo "  pdf       to make PDF from LaTeX, you can set PAPER=a4 or PAPER=letter"
 	@echo "  latexpdfja to make LaTeX files and run them through platex/dvipdfmx"
 	@echo "  text       to make text files"
 	@echo "  man        to make manual pages"
@@ -47,6 +48,7 @@ help:
 	@echo "  xml        to make Docutils-native XML files"
 	@echo "  pseudoxml  to make pseudoxml-XML files for display purposes"
 	@echo "  linkcheck  to check all external links for integrity"
+	@echo "  install    to upload to github web page"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
 
 clean:
@@ -178,3 +180,18 @@ pseudoxml:
 	$(SPHINXBUILD) -b pseudoxml $(ALLSPHINXOPTS) $(BUILDDIR)/pseudoxml
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
+
+
+install: pdf html 
+	rm -rf build/git-lectures.github.com
+	cd build/ && \
+        git clone git@github.com:git-lectures/git-lectures.github.com.git && \
+        cp -r html/* git-lectures.github.com && \
+        cd git-lectures.github.com && \
+        git add * && \
+        git commit -a -m 'Make install' && \
+        git push
+
+pdf: latex
+	cd build/latex ; make all-pdf ; pdfnup GitTutorial.pdf
+	#cd build/latex ; make all-pdf ; pdfnup python4science.pdf

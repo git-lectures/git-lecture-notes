@@ -98,7 +98,6 @@ if version:
 
 # List of directories, relative to source directory, that shouldn't be searched
 # for source files.
-exclude_trees = ['intro/image_processing']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -226,7 +225,7 @@ html_use_index = False
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PythonScientic'
+htmlhelp_basename = 'GitTutorial'
 
 
 # Options for LaTeX output
@@ -244,15 +243,14 @@ latex_show_pagerefs = True
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
 latex_documents = [
-  ('index', 'PythonScientific.tex', ur'Python Scientific lecture notes',
-   ur"""EuroScipy tutorial team \\\relax\normalfont Editors: Valentin Haenel, Emmanuelle Gouillart, Gaël Varoquaux"""
-   + r"\\\relax ~\\\relax http://scipy-lectures.github.com",
+  ('index', 'GitTutorial.tex', ur'Git lecture notes for EuroScipy',
+   ur"""EuroScipy tutorial team \\\relax\normalfont Editors: Nelle Varoquaux"""
+   + r"\\\relax ~\\\relax http://git-lectures.github.com",
    'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo = 'euroscipy_back.pdf'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
