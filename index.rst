@@ -167,7 +167,7 @@ staged.
 
 .. figure:: images/git_file_status_lifecycle.png
 
-You can check the statuses of each file in your directory with the
+You can check the status of each file in your directory with the
 command ``git status``. This command will display all untracked files, and
 modified and staged files in your directory::
 
