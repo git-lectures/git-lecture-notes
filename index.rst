@@ -27,22 +27,25 @@ And ideally, you want to avoid this:
   "Piled Higher and Deeper" by Jorge Cham: www.phdcomics.com
 
 Version control systems allow to keep all the historical versions of your
-software, for easy tracking. It also benefits team collaboration, improves our
-efficiency. In addition, it can be used as a data center, making build
-automation possible.
+software for easy tracking. It also benefits team collaboration and mproves
+our efficiency. In addition, it can be used as a data center, making build
+automation and continous integration possible.
 
-In this tutorial, we are going to learn the basics of Git and Github. Git is a
-distributed version control software (DCSV) and Github a git hosting platform.
-Other well-known DCVS are mercurial and bazaar.
+In this tutorial, we are going to learn the basics of Git and Github. First,
+what is Git? Git is a distributed version control software (DCSV). Github is a
+git hosting platform that provide free git repository for all opensource
+softwares. Other well-known DCVS are mercurial and bazaar, with their
+respective hosting platform, bitbucket (which now also supports git
+repository) and launchpad.
 
 Why did we choose to introduce git, and not mercurial, which is not only build
-with python, but has also been chosen by CPython to host their code. Well, it
-is quite easy: in the scientific world, git (and github) are much more widely
-used than mercurial (and bitbucket). A scholar.google search yields 14,100
-results for a "github" search, while a "bitbucket" search only returns 2,260
-results. If that's not enough to be convinced, here is a table of python
-packages, divided in two list: the github hosted ones, and the bitbucket
-hosted ones.
+with python, but has also been chosen by CPython (and many other python
+project) to host their code. That decision was quite straightforward: in the
+scientific world, git (and github) are much more widely used than mercurial
+(and bitbucket). A scholar.google search yields 14,100 results for a "github"
+search, while a "bitbucket" search only returns 2,260 results. If that's not
+enough to be convinced, here is a table of python packages, divided in two
+list: the github hosted ones, and the bitbucket hosted ones.
 
 +-----------------------------------+----------------------------------------+
 | Github                            | Bitbucket                              |
@@ -66,17 +69,43 @@ hosted ones.
 | ....                              |                                        |
 +-----------------------------------+----------------------------------------+
 
+Before we start learning git, please be aware that git is a very powerful
+tool. We will only introduce the basics of Git in this tutorial, and many
+things may seem obscure and you may (will?) struggle with the concepts.
+Yet, after a while using it, we get used to the rough edge, and start using
+more complex commands.
 
+The basic git workflow is:
+
+  - modify files in your working directory.
+  - stage files you've worked on. This prepares a snapshot of the directory
+  - commit the files you've staged. This stores that snapshot in the Git
+    repository.
 
 Initializing repositories and configuring git
 --------------------------------------------------------------------------------
 
-In the project directory, initialize the git repository with::
+There are several way to initiliaze a git repository. The first is used to
+initialize git in an existing repository. The second is used to retrieve an
+existing repository.
+
+To initialize a new project, in the project directory, initialize the git
+repository with::
 
   git init
 
 This will enable git to keep track of changes in this folder, and subfolders
 by creating a .git hidden folder containing the git skeleton.
+
+The second way is::
+
+  git clone https://github.com/git-lectures/git-lectures.github.com.git
+
+This will clone the repository containing the documents of this tutorial.
+
+.. note:: Each new repository should be in its own directory. One git
+   repository should not be created or cloned in an existing git repository,
+   ie a folder you've initialized a git repository and its subfolders.
 
 Before continuing let's configure git. You will have to do this once per
 computer you use::
@@ -87,12 +116,22 @@ computer you use::
   git config --global core.editor vim
   git config color.ui auto
 
-And you can check your configuration with::
+The ``--global`` option corresponds to a user-wide configuration. The
+configuration will be stored in a hidden repository in your home. You can also
+configure each git repository individually, by removing this option, or
+system-wide by replacing the ``--global`` option with ``--system``. Usually,
+we just configure repositories user-wide.
+
+You can check your configuration with::
 
   git config --list
 
+If you've configured git several times at different levels, you will probably
+see several entries twice or three times in the configuration list. The
+user-wide configuration overrides the system-wide configuration, and the local
+configuration overrides the user-wide configuration.
 
-Creating snapshots
+Creating snapshots: "committing"
 --------------------------------------------------------------------------------
 
 One of the main goal of version control is to save snapshots of your
@@ -110,7 +149,7 @@ First let's create some directories and files in our directory.
 
    touch README
 
-You now have a new file in the project folder. As mentionned before, git does
+You now have a new file in the project folder. As mentioned before, git does
 not track this file yet. First, you need to tell git this file exists::
 
   git add README
