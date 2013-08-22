@@ -99,7 +99,7 @@ by creating a .git hidden folder containing the git skeleton.
 
 The second way is::
 
-  git clone https://github.com/git-lectures/git-lectures.github.com.git
+  git clone https://github.com/git-lectures/git-lecture-notes.git
 
 This will clone the repository containing the documents of this tutorial.
 
@@ -231,7 +231,8 @@ To do so, use ``git checkout <filename>``. If you run ``git status``, you can
 notice git reminds you what command to use for which action.
 
 
-Exercises:
+Exercises
+~~~~~~~~~~
 
   - Create a folder called GitTutorial
   - Inside it, initialize an empty git repository (``git init``)
@@ -407,7 +408,8 @@ You can checkout the remote branches, but you should never (never ever
 ever!!!) work in those branches.
 
 
-Exercises:
+Exercises
+~~~~~~~~~~
 
   - Create a github account.
   - Create a git project. **Do not add a readme file, a .gitignore file, or
