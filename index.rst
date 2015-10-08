@@ -17,7 +17,7 @@ As researchers, you (probably) want:
 
 .. figure:: images/Journal-of-Irrproducibe-Research.jpg
 
-   The journal of Irreproducible research.
+   The Journal of Irreproducible Research.
 
 
 And ideally, you want to avoid this:
@@ -27,9 +27,9 @@ And ideally, you want to avoid this:
   "Piled Higher and Deeper" by Jorge Cham: www.phdcomics.com
 
 Version control systems allow to keep all the historical versions of your
-software for easy tracking. It also benefits team collaboration and mproves
+software for easy tracking. It also benefits team collaboration and improves
 our efficiency. In addition, it can be used as a data center, making build
-automation and continous integration possible.
+automation and continuous integration possible.
 
 In this tutorial, we are going to learn the basics of Git and Github. First,
 what is Git? Git is a distributed version control software (DCSV). Github is a
@@ -38,14 +38,14 @@ softwares. Other well-known DCVS are mercurial and bazaar, with their
 respective hosting platform, bitbucket (which now also supports git
 repository) and launchpad.
 
-Why did we choose to introduce git, and not mercurial, which is not only build
+Why did we choose to introduce git, and not mercurial, which is not only built
 with python, but has also been chosen by CPython (and many other python
-project) to host their code. That decision was quite straightforward: in the
+projects) to host their code? This decision was quite straightforward: in the
 scientific world, git (and github) are much more widely used than mercurial
 (and bitbucket). A scholar.google search yields 14,100 results for a "github"
 search, while a "bitbucket" search only returns 2,260 results. If that's not
 enough to be convinced, here is a table of python packages, divided in two
-list: the github hosted ones, and the bitbucket hosted ones.
+lists: the github hosted ones, and the bitbucket hosted ones.
 
 +-----------------------------------+----------------------------------------+
 | Github                            | Bitbucket                              |
@@ -78,7 +78,7 @@ more complex commands.
 The basic git workflow is:
 
   - modify files in your working directory.
-  - stage files you've worked on. This prepares a snapshot of the directory
+  - stage files you've worked on. This prepares a snapshot of the directory.
   - commit the files you've staged. This stores that snapshot in the Git
     repository.
 
